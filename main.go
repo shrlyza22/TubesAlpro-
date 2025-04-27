@@ -121,9 +121,8 @@ func tampilSemuaIdePengusul(daftarIde [NMAX]Ide, n int) {
 
 		}
 		fmt.Println("============================================")
-		fmt.Printf("Ide ke - %d\n", i+1)
+		fmt.Printf("Ide ke - %d\n", daftarIde[n].noIde)
 		fmt.Println("============================================")
-		fmt.Printf("Nomor Ide : %d\n", daftarIde[n].noIde)
 		fmt.Println("Judul    :", strings.ReplaceAll(daftarIde[i].ideNya, "_", " "))
 		fmt.Println("Deskripsi:", strings.ReplaceAll(daftarIde[i].deskripsiIde, "_", " "))
 		fmt.Println("Pengusul :", daftarIde[i].pengusul)
