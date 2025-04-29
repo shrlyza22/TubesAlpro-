@@ -133,44 +133,46 @@ func tampilSemuaIdePengusul(daftarIde [NMAX]Ide, n int) {
 }
 
 func cariIdenya(daftarIde [NMAX]Ide, n int) {
-	I.S  : daftarIde terdefinisi, n terdefinisi
+	/* I.S  : daftarIde terdefinisi, n terdefinisi
 	F.S  : Mencari ide yang ingin pengguna temukan berdasarkan kata kunci yang diberikan
-	var keyword string
-	fmt.Println("\n=== Cari Ide ===")
-	fmt.Print("Masukkan kata kunci: ")
-	fmt.Scanln(&keyword, " ")
+	*\ 
+// 	var keyword string
+// 	fmt.Println("\n=== Cari Ide ===")
+// 	fmt.Print("Masukkan kata kunci: ")
+// 	fmt.Scanln(&keyword, " ")
 
-	if keyword == " " {
-		fmt.Println("Kata kunci tidak boleh kosong.")
-		return
-	}
+// 	if keyword == " " {
+// 		fmt.Println("Kata kunci tidak boleh kosong.")
+// 		return
+// 	}
 
-	fmt.Println("\nHasil Pencarian Ide:")
-	found := false
-	for i := 0; i < n; i++ {
-		if strings.Contains(strings.ToLower(daftarIde[i].ideNya), strings.ToLower(keyword)) ||
-			strings.Contains(strings.ToLower(daftarIde[i].deskripsiIde), strings.ToLower(keyword)) ||
-			strings.Contains(strings.ToLower(daftarIde[i].pengusul), strings.ToLower(keyword)) ||
-			strings.Contains(strings.ToLower(daftarIde[i].status), strings.ToLower(keyword)) {
+// 	fmt.Println("\nHasil Pencarian Ide:")
+// 	found := false
+// 	for i := 0; i < n; i++ {
+// 		if strings.Contains(strings.ToLower(daftarIde[i].ideNya), strings.ToLower(keyword)) ||
+// 			strings.Contains(strings.ToLower(daftarIde[i].deskripsiIde), strings.ToLower(keyword)) ||
+// 			strings.Contains(strings.ToLower(daftarIde[i].pengusul), strings.ToLower(keyword)) ||
+// 			strings.Contains(strings.ToLower(daftarIde[i].status), strings.ToLower(keyword)) {
 
-			fmt.Printf(" #%d. %d. %s - %s (Pengusul: %s, Kategori: %s)\n", daftarIde[i].noIde,
-				daftarIde[i].ideNya, daftarIde[i].deskripsiIde,
-				daftarIde[i].pengusul, daftarIde[i].status)
-			found = true
-		}
-}
+// 			fmt.Printf(" #%d. %d. %s - %s (Pengusul: %s, Kategori: %s)\n", daftarIde[i].noIde,
+// 				daftarIde[i].ideNya, daftarIde[i].deskripsiIde,
+// 				daftarIde[i].pengusul, daftarIde[i].status)
+// 			found = true
+// 		}
+// }
 
-//		if !found {
-//			fmt.Println("Tidak ada ide yang cocok dengan kata kunci yang di cari Anda.")
-//		}
+// 		if !found {
+// 			fmt.Println("Tidak ada ide yang cocok dengan kata kunci yang di cari Anda.")
+// 	}
 
 func hapusIde(daftarIde *[NMAX]Ide, n *int) {
-	// I.S  : daftarIde terdefinisi, n terdefinisi
-	// F.S  : Menghapus ide yang ingin dihapus dari daftar ide
-
+/* I.S  : daftarIde terdefinisi, n terdefinisi
+F.S  : Menghapus ide yang ingin dihapus dari daftar ide
+*\ 
 }
-func editIde(daftarIde [NMAX]Ide, n int) {
-	// I.S  : daftarIde terdefinisi, n terdefinisi
-	// F.S  : Mengedit ide yang ingin diedit dari daftar ide
 
+func editIde(daftarIde [NMAX]Ide, n int) {
+/* I.S  : daftarIde terdefinisi, n terdefinisi
+	F.S  : Mengedit ide yang ingin diedit dari daftar ide
+*\
 }
