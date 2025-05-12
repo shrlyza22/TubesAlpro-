@@ -95,13 +95,13 @@ func inputIdeBaru(daftarIde *[NMAX]Ide, n *int) {
 	daftarIde[*n].noIde = tempNomorIde
 
 	fmt.Print("Judul (gunakan_underscore_untuk_spasi): ")
-	fmt.Scan(&daftarIde[i].ideNya)
+	fmt.Scan(&daftarIde[*n].ideNya)
 	fmt.Print("Deskripsi (gunakan_underscore_untuk_spasi): ")
-	fmt.Scan(&daftarIde[i].deskripsiIde)
+	fmt.Scan(&daftarIde[*n].deskripsiIde)
 	fmt.Print("Pengusul: ")
-	fmt.Scan(&daftarIde[i].pengusul)
+	fmt.Scan(&daftarIde[*n].pengusul)
 	fmt.Print("Kategori: ")
-	fmt.Scan(&daftarIde[i].status)
+	fmt.Scan(&daftarIde[*n].status)
 
 	(*n)++
 	fmt.Print("Data berhasil ditambahkan!")
@@ -121,7 +121,7 @@ func tampilSemuaIdePengusul(daftarIde [NMAX]Ide, n int) {
 
 		}
 		fmt.Println("============================================")
-		fmt.Printf("Ide ke - %d\n", daftarIde[n].noIde)
+		fmt.Printf("Ide ke - %d\n", daftarIde[i].noIde)
 		fmt.Println("============================================")
 		fmt.Println("Judul    :", strings.ReplaceAll(daftarIde[i].ideNya, "_", " "))
 		fmt.Println("Deskripsi:", strings.ReplaceAll(daftarIde[i].deskripsiIde, "_", " "))
