@@ -78,7 +78,7 @@ func inputIdeBaru(daftarIde *[NMAX]Ide, n *int) {
 		// Cek kesamaan nomor ide
 		duplicate := false
 		for i := 0; i < *n; i++ {
-			if daftarIde[*n].noIde == tempNomorIde {
+			if daftarIde[i].noIde == tempNomorIde {
 				duplicate = true
 				break
 			}
