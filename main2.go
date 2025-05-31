@@ -21,7 +21,6 @@ func main() {
 }
 func home(A *tabIde, n *int) {
 	var opsi, no, idx int
-	var nama string
 	for opsi != 5 {
 		fmt.Println("===================================================")
 		fmt.Println("||                                               ||")
@@ -48,13 +47,17 @@ func home(A *tabIde, n *int) {
 			idx = cari_no_ide(*A, *n, no)
 			if idx != -1 {
 				hapus_ide(&*A, &*n, idx)
+			} else {
+				fmt.Println("Data tidak ditemukan")
 			}
 		} else if opsi == 3 {
-			fmt.Println("Masukkan Nama Ide yang mau dihapus")
-			fmt.Scan(&nama)
-			idx = cari_nama_ide(*A, *n, nama)
+			fmt.Println("Masukkan No Ide yang mau diedit")
+			fmt.Scan(&no)
+			idx = cari_no_ide(*A, *n, no)
 			if idx != -1 {
 				edit_ide(&*A, idx)
+			} else {
+				fmt.Println("Data tidak ditemukan")
 			}
 		} else if opsi == 4 {
 			main_display(*A, *n)
@@ -64,10 +67,18 @@ func home(A *tabIde, n *int) {
 	}
 }
 func tambah_ide(A *tabIde, n *int) {
+	var no int
 	fmt.Println("Masukkan Data yang Ingin ditambahkan")
 	fmt.Print("No Ide:")
-	fmt.Scan(&A[*n].noIde)
-
+	fmt.Scan(&no)
+	x := cari_no_ide(*A, *n, no)
+	for x != -1 {
+		fmt.Println("Nomor ide sudah ada")
+		fmt.Print("No Ide:")
+		fmt.Scan(&no)
+		x = cari_no_ide(*A, *n, no)
+	}
+	A[*n].noIde = no
 	fmt.Print("Nama Ide:")
 	fmt.Scan(&A[*n].ideNya)
 	fmt.Print("Nama Pengusul:")
@@ -94,7 +105,6 @@ func cari_no_ide(A tabIde, n int, x int) int {
 			left = mid + 1
 		}
 	}
-	fmt.Println("Data Tidak ditemukan")
 	return -1
 }
 func cari_nama_ide(A tabIde, n int, x string) int {
@@ -103,7 +113,6 @@ func cari_nama_ide(A tabIde, n int, x string) int {
 			return i
 		}
 	}
-	fmt.Println("Data Tidak ditemukan")
 	return -1
 }
 func ascending_insertion_no_ide(A *tabIde, n int) {
@@ -182,10 +191,18 @@ func all_display(A tabIde, n int) {
 	}
 }
 func edit_ide(A *tabIde, idx int) {
+	var no int
 	fmt.Println("Masukkan Data yang Ingin diedit")
 	fmt.Print("No Ide:")
-	fmt.Scan(&A[idx].noIde)
-
+	fmt.Scan(&no)
+	x := cari_no_ide(*A, idx, no)
+	for x != -1 {
+		fmt.Println("Nomor ide sudah ada")
+		fmt.Print("No Ide:")
+		fmt.Scan(&no)
+		x = cari_no_ide(*A, idx, no)
+	}
+	A[idx].noIde = no
 	fmt.Print("Nama Ide:")
 	fmt.Scan(&A[idx].ideNya)
 	fmt.Print("Nama Pengusul:")
@@ -201,7 +218,7 @@ func main_display(A tabIde, n int) {
 	var nama string
 	fmt.Println("1. Nomor Ide Menaik")
 	fmt.Println("2. Nomor Ide Menurun")
-	fmt.Println("3. Nama Ide Menurut")
+	fmt.Println("3. Nama Ide Menaik")
 	fmt.Println("4. Nama Ide Menurun")
 	fmt.Println("5. Cari Nama Ide")
 	fmt.Println("6. Cari Nomor Ide")
@@ -229,6 +246,8 @@ func main_display(A tabIde, n int) {
 		idx = cari_nama_ide(A, n, nama)
 		if idx != -1 {
 			display_ide(A, idx)
+		} else {
+			fmt.Println("Ide tidak ditemukan")
 		}
 	} else if opsi == 6 {
 		fmt.Println("Masukkan No Ide yang akan dicari")
@@ -236,6 +255,8 @@ func main_display(A tabIde, n int) {
 		idx = cari_no_ide(A, n, no)
 		if idx != -1 {
 			display_ide(A, idx)
+		} else {
+			fmt.Println("Data tidak ditemukan")
 		}
 	}
 }
